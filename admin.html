@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Guardians Of Paris — Administración</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+
+</head>
+
+
+<body class="admin-login-page">
+
+
+    <!-- =====================================================
+         LOADER
+    ====================================================== -->
+
+    <div
+        id="adminLoader"
+        class="admin-loader"
+        aria-hidden="true"
+    >
+
+        <div class="loader-symbol">
+            ✦
+        </div>
+
+        <div class="loader-line"></div>
+
+        <span>
+            GUARDIANS OF PARIS
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="admin-background">
+
+        <div
+            class="background-glow background-glow-one"
+        ></div>
+
+        <div
+            class="background-glow background-glow-two"
+        ></div>
+
+        <div
+            class="background-symbol background-symbol-one"
+        >
+            ✦
+        </div>
+
+        <div
+            class="background-symbol background-symbol-two"
+        >
+            ✧
+        </div>
+
+        <div
+            class="background-symbol background-symbol-three"
+        >
+            ◈
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOGIN
+    ====================================================== -->
+
+    <main class="login-container">
+
+        <div class="login-emblem">
+
+            <span>
+                ✦
+            </span>
+
+        </div>
+
+
+        <div class="login-overline">
+            GUARDIANS OF PARIS
+        </div>
+
+
+        <h1>
+            Iniciar Sesión
+        </h1>
+
+
+        <p class="login-subtitle">
+            Centro privado de administración
+        </p>
+
+
+        <form id="adminLoginForm">
+
+
+            <!-- USERNAME -->
+
+            <div class="login-field">
+
+                <label for="adminUsername">
+                    Usuario
+                </label>
+
+                <input
+                    type="text"
+                    id="adminUsername"
+                    name="username"
+                    placeholder="Ingresa tu usuario"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="login-field">
+
+                <label for="adminPassword">
+                    Contraseña
+                </label>
+
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        name="password"
+                        placeholder="Ingresa tu contraseña"
+                        autocomplete="current-password"
+                        required
+                    >
+
+
+                    <button
+                        type="button"
+                        id="passwordToggle"
+                        aria-label="Mostrar contraseña"
+                    >
+                        ◉
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="loginMessage"
+                class="login-message"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                id="loginButton"
+            >
+
+                <span class="button-text">
+                    Acceder al sistema
+                </span>
+
+                <span class="button-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+        </form>
+
+
+        <!-- SECURITY NOTICE -->
+
+        <div class="security-notice">
+
+            <div class="security-icon">
+                ◈
+            </div>
+
+
+            <div class="security-text">
+
+                <strong>
+                    ACCESO RESTRINGIDO
+                </strong>
+
+                <span>
+                    Área exclusiva para el equipo administrativo de Guardians Of Paris.
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="admin-footer">
+
+        <span>
+            GUARDIANS OF PARIS
+        </span>
+
+        <span>
+            •
+        </span>
+
+        <span>
+            ADMINISTRATION SYSTEM
+        </span>
+
+        <span>
+            •
+        </span>
+
+        <span>
+            SECURE ACCESS
+        </span>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./js/admin.js"></script>
+
+
+    <!--
+        SEGURIDAD EXTRA PARA EL LOADER.
+
+        No depende de window.load.
+        No depende de imágenes.
+        No depende de fuentes.
+        Simplemente elimina el loader cuando
+        el HTML ya está preparado.
+    -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const loader =
+                    document.getElementById(
+                        "adminLoader"
+                    );
+
+
+                if (!loader) {
+                    return;
+                }
+
+
+                window.setTimeout(
+                    function () {
+
+                        loader.style.opacity = "0";
+                        loader.style.visibility = "hidden";
+                        loader.style.pointerEvents = "none";
+
+                        /*
+                            Después de la transición,
+                            lo eliminamos completamente
+                            del flujo visual.
+                        */
+
+                        window.setTimeout(
+                            function () {
+
+                                loader.style.display = "none";
+
+                            },
+                            650
+                        );
+
+                    },
+                    350
+                );
+
+            },
+            {
+                once: true
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
